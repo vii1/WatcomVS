@@ -1,0 +1,50 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Net" #>
+<#@ output extension=".html" #>
+<#@ parameter type="WatcomVS.InvokeWatcom.Report" name="Report" #>
+<#@ parameter type="System.DateTime" name="Timestamp" #>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Report: <#= WebUtility.HtmlEncode(Report.Title) #></title>
+    <style type="text/css">
+        .error { color: red; }
+        .warning { color: orange; }
+        .ok { color: black; }
+        table { border: none; }
+        tr {
+            border-top: 1px solid black;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid black;
+        }
+        td { border: none; }
+    </style>
+</head>
+<body>
+    <h1>Report: <#= WebUtility.HtmlEncode(Report.Title) #></h1>
+    <p><time datetime="<#= Timestamp.ToString("O") #>"><#= WebUtility.HtmlEncode(Timestamp.ToString("F")) #></time></p>
+    <table>
+        <thead>
+            <tr>
+                <td>Status</td>
+                <td>Category</td>
+                <td>Description</td>
+            </tr>
+        </thead>
+        <tbody>
+            <# foreach(var item in Report.Items) { #>
+                <tr class="<#= item.Status.ToString().ToLower() #>">
+                    <td><#= item.Status.ToString() #></td>
+                    <td><#= WebUtility.HtmlEncode(item.Category) #></td>
+                    <td><#= WebUtility.HtmlEncode(item.Description) #></td>
+                </tr>
+            <# } #>
+        </tbody>
+    </table>
+</body>
+<html>
