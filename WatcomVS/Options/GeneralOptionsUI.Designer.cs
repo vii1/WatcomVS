@@ -29,14 +29,24 @@
         {
             System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneralOptionsUI));
+            System.Windows.Forms.GroupBox groupBox1;
+            System.Windows.Forms.LinkLabel linkLabel;
+            System.Windows.Forms.Label label1;
+            System.Windows.Forms.GroupBox groupBox2;
             this.textWatcomPath = new System.Windows.Forms.TextBox();
             this.buttonWatcomPathBrowse = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.linkLabel = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.radioOldPathsNo = new System.Windows.Forms.RadioButton();
+            this.radioOldPathsLegacyOnly = new System.Windows.Forms.RadioButton();
+            this.radioOldPathsAlways = new System.Windows.Forms.RadioButton();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            groupBox1 = new System.Windows.Forms.GroupBox();
+            linkLabel = new System.Windows.Forms.LinkLabel();
+            label1 = new System.Windows.Forms.Label();
+            groupBox2 = new System.Windows.Forms.GroupBox();
             tableLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -61,46 +71,85 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.linkLabel);
-            this.groupBox1.Controls.Add(tableLayoutPanel1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            resources.ApplyResources(groupBox1, "groupBox1");
+            groupBox1.Controls.Add(linkLabel);
+            groupBox1.Controls.Add(tableLayoutPanel1);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Name = "groupBox1";
+            groupBox1.TabStop = false;
             // 
             // linkLabel
             // 
-            resources.ApplyResources(this.linkLabel, "linkLabel");
-            this.linkLabel.Name = "linkLabel";
-            this.linkLabel.TabStop = true;
-            this.linkLabel.UseCompatibleTextRendering = true;
-            this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
+            resources.ApplyResources(linkLabel, "linkLabel");
+            linkLabel.Name = "linkLabel";
+            linkLabel.TabStop = true;
+            linkLabel.UseCompatibleTextRendering = true;
+            linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
+            // 
+            // groupBox2
+            // 
+            resources.ApplyResources(groupBox2, "groupBox2");
+            groupBox2.Controls.Add(this.radioOldPathsAlways);
+            groupBox2.Controls.Add(this.radioOldPathsLegacyOnly);
+            groupBox2.Controls.Add(this.radioOldPathsNo);
+            groupBox2.Controls.Add(this.label2);
+            groupBox2.Name = "groupBox2";
+            groupBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // radioOldPathsNo
+            // 
+            resources.ApplyResources(this.radioOldPathsNo, "radioOldPathsNo");
+            this.radioOldPathsNo.Name = "radioOldPathsNo";
+            this.radioOldPathsNo.TabStop = true;
+            this.radioOldPathsNo.UseVisualStyleBackColor = true;
+            // 
+            // radioOldPathsSometimes
+            // 
+            resources.ApplyResources(this.radioOldPathsLegacyOnly, "radioOldPathsSometimes");
+            this.radioOldPathsLegacyOnly.Name = "radioOldPathsSometimes";
+            this.radioOldPathsLegacyOnly.TabStop = true;
+            this.radioOldPathsLegacyOnly.UseVisualStyleBackColor = true;
+            // 
+            // radioOldPathsAlways
+            // 
+            resources.ApplyResources(this.radioOldPathsAlways, "radioOldPathsAlways");
+            this.radioOldPathsAlways.Name = "radioOldPathsAlways";
+            this.radioOldPathsAlways.TabStop = true;
+            this.radioOldPathsAlways.UseVisualStyleBackColor = true;
             // 
             // GeneralOptionsUI
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(groupBox2);
+            this.Controls.Add(groupBox1);
             this.Name = "GeneralOptionsUI";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonWatcomPathBrowse;
         private System.Windows.Forms.TextBox textWatcomPath;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel;
+        private System.Windows.Forms.RadioButton radioOldPathsAlways;
+        private System.Windows.Forms.RadioButton radioOldPathsLegacyOnly;
+        private System.Windows.Forms.RadioButton radioOldPathsNo;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -16,6 +16,22 @@ namespace WatcomVS.Options
         [Editor( typeof( ErikE.Shuriken.FolderPathEditor ), typeof( System.Drawing.Design.UITypeEditor ) )]
         public string WatcomPath { get; set; } = "";
 
+        public enum UseOldFilePathsValue
+        {
+            No,
+            LegacyOnly,
+            Always
+        }
+
+        [Category( "WatcomVS" )]
+        [DisplayName( "Convert file paths to old 8.3 format" )]
+        [Description( "Some target OS's and some Open Watcom tools are incompatible with long file names or names with spaces.\n" +
+            "No: will try to use always the long file names and, when required, will try to rename short files to their long version.\n" +
+            "Legacy Only: convert file names to 8.3 format when targeting an OS that does not support long names (p.e. DOS, Windows 3.x).\n" +
+            "Always: will always convert long file names to short 8.3 format, no matter the target OS." )]
+        [DefaultValue( typeof( UseOldFilePathsValue ), "No" )]
+        public UseOldFilePathsValue UseOldFilePaths { get; set; } = UseOldFilePathsValue.No;
+
         private WeakReference<GeneralOptionsUI> m_ui;
 
         private void Load( GeneralOptionsUI ui = null )
@@ -24,6 +40,7 @@ namespace WatcomVS.Options
                 return;
             }
             ui.WatcomPath = WatcomPath;
+            ui.UseOldFilePaths = UseOldFilePaths;
         }
 
         private void Save( GeneralOptionsUI ui = null )
@@ -32,6 +49,7 @@ namespace WatcomVS.Options
                 return;
             }
             WatcomPath = ui.WatcomPath;
+            UseOldFilePaths = ui.UseOldFilePaths;
         }
 
         protected override void OnApply( PageApplyEventArgs e )
@@ -55,7 +73,6 @@ namespace WatcomVS.Options
                     m_ui = new WeakReference<GeneralOptionsUI>( ui );
                 }
                 Load( ui );
-                //page.Initialize();
                 return ui;
             }
         }

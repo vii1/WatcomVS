@@ -1,50 +1,47 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualStudio.Services;
-using EnvDTE;
 using System.IO;
 using System.Runtime.InteropServices;
 
 namespace WatcomVS.Options
 {
+    using UseOldFilePathsValue = GeneralOptions.UseOldFilePathsValue;
+
     public partial class GeneralOptionsUI : UserControl
     {
-        public string WatcomPath {
+        internal string WatcomPath {
             get => textWatcomPath.Text;
             set => textWatcomPath.Text = value;
         }
-
-        /*private string _report;
-        private string Report {
-            get => _report;
+        internal UseOldFilePathsValue UseOldFilePaths {
+            get {
+                if( radioOldPathsAlways.Checked ) {
+                    return UseOldFilePathsValue.Always;
+                } else if( radioOldPathsLegacyOnly.Checked ) {
+                    return UseOldFilePathsValue.LegacyOnly;
+                } else {
+                    return UseOldFilePathsValue.No;
+                }
+            }
             set {
-                _report = value;
+                switch( value ) {
+                    case UseOldFilePathsValue.LegacyOnly:
+                        radioOldPathsLegacyOnly.Checked = true;
+                        break;
+                    case UseOldFilePathsValue.Always:
+                        radioOldPathsAlways.Checked = true;
+                        break;
+                    default:
+                        radioOldPathsNo.Checked = true;
+                        break;
+                }
             }
         }
-        private enum CheckResult
-        {
-            OK,
-            Warning,
-            Error
-        }*/
 
         public GeneralOptionsUI()
         {
-            //optionsPage = GeneralOptions.Instance;
-            //optionsPage.Load();
             InitializeComponent();
-        }
-
-        public void Initialize()
-        {
-            //textWatcomPath.Text = optionsPage.WatcomPath;
         }
 
         private void ButtonWatcomPathBrowse_Click( object sender, EventArgs e )
@@ -61,12 +58,11 @@ namespace WatcomVS.Options
                     //    path = shortPath.ToString();
                     //}
                     WatcomPath = path;
-                    //optionsPage.WatcomPath = path;
-                    //optionsPage.Save();
                 }
             }
         }
 
+        // TODO: mover esto a InvokeWatcom
         private const int MAX_PATH = 260;
         [DllImport( "kernel32.dll", CharSet = CharSet.Auto )]
         private static extern int GetShortPathName(
