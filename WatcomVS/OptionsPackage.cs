@@ -36,7 +36,7 @@ namespace WatcomVS
     [InstalledProductRegistration( "#110", "#112", "1.0", IconResourceID = 400 )] // Info on this package for Help/About
     [Guid( OptionsPackage.PackageGuidString )]
     [SuppressMessage( "StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms" )]
-    [ProvideOptionPage( typeof( Options.DialogPageProvider.General ), "WatcomVS", "General", 0, 0, true )]
+    [ProvideOptionPage( typeof( Options.GeneralOptions ), "WatcomVS", "General", 0, 0, true )]
     public sealed class OptionsPackage : AsyncPackage
     {
         /// <summary>

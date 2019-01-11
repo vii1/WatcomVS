@@ -68,12 +68,9 @@
     <Compile Include="InvokeWatcom\CheckFile.cs" />
     <Compile Include="InvokeWatcom\CheckPath.cs" />
     <Compile Include="OptionsPackage.cs" />
-    <Compile Include="Options\BaseOptionModel.cs" />
-    <Compile Include="Options\BaseOptionPage.cs">
+    <Compile Include="Options\GeneralOptions.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Options\DialogPageProvider.cs" />
-    <Compile Include="Options\GeneralOptions.cs" />
     <Compile Include="Options\GeneralOptionsUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
