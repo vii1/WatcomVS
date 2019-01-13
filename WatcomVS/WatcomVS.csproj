@@ -82,9 +82,80 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <Content Include="WatcomCrossPlatform\1.0\Platforms\286\Platform.default.props">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform\1.0\Platforms\286</VSIXSubPath>
+    </Content>
+    <Content Include="WatcomCrossPlatform\1.0\Platforms\286\Platform.props">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform\1.0\Platforms\286</VSIXSubPath>
+    </Content>
+    <Content Include="WatcomCrossPlatform\1.0\Platforms\286\Platform.targets">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform\1.0\Platforms\286</VSIXSubPath>
+    </Content>
+    <Content Include="WatcomCrossPlatform\1.0\Platforms\286\PlatformToolsets\WatcomVS\Toolset.props">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform\1.0\Platforms\286\PlatformToolsets\WatcomVS</VSIXSubPath>
+    </Content>
+    <Content Include="WatcomCrossPlatform\1.0\Platforms\286\PlatformToolsets\WatcomVS\Toolset.targets">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform\1.0\Platforms\286\PlatformToolsets\WatcomVS</VSIXSubPath>
+    </Content>
+    <Content Include="PlatformToolsets\Win32\WatcomVS\Toolset.props">
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>Platforms\Win32\PlatformToolsets\WatcomVS</VSIXSubPath>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="PlatformToolsets\Win32\WatcomVS\Toolset.targets">
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>Platforms\Win32\PlatformToolsets\WatcomVS</VSIXSubPath>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="WatcomCrossPlatform\1.0\Defaults.props">
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform\1.0</VSIXSubPath>
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+    </Content>
+    <Content Include="WatcomCrossPlatform\1.0\Platforms\386\Platform.default.props">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform\1.0\Platforms\386</VSIXSubPath>
+    </Content>
+    <Content Include="WatcomCrossPlatform\1.0\Platforms\386\Platform.props">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform\1.0\Platforms\386</VSIXSubPath>
+    </Content>
+    <Content Include="WatcomCrossPlatform\1.0\Platforms\386\Platform.targets">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform\1.0\Platforms\386</VSIXSubPath>
+    </Content>
+    <Content Include="WatcomCrossPlatform\1.0\Platforms\386\PlatformToolsets\WatcomVS\Toolset.props">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform\1.0\Platforms\386\PlatformToolsets\WatcomVS</VSIXSubPath>
+    </Content>
+    <Content Include="WatcomCrossPlatform\1.0\Platforms\386\PlatformToolsets\WatcomVS\Toolset.targets">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform\1.0\Platforms\386\PlatformToolsets\WatcomVS</VSIXSubPath>
+    </Content>
+    <Content Include="WatcomCrossPlatform\Defaults.props">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>VCTargets</InstallRoot>
+      <VSIXSubPath>ApplicationType\WatcomCrossPlatform</VSIXSubPath>
+    </Content>
+    <None Include="VCTargets\WatcomVS.Common.props" />
     <None Include="WatcomVSkey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +296,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

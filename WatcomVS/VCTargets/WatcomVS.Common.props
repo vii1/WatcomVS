@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TargetPath Condition="'$(TargetPath)' == ''">$([System.IO.Path]::Combine($(ProjectDir),$(OutDir)$(TargetName)$(TargetExt)))</TargetPath>
+    <TargetFileName Condition=" '$(TargetFileName)'=='' ">$([System.IO.Path]::GetFileName('$(TargetPath)'))</TargetFileName>
+    <TargetDir Condition=" '$(TargetDir)'==''">$([System.IO.Path]::GetDirectoryName('$(TargetPath)'))</TargetDir>
+    <LocalDebuggerCommand Condition="'$(LocalDebuggerCommand)'==''">$(TargetPath)</LocalDebuggerCommand>
+    <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean);$(OutDir)$(TargetName).sym;$(OutDir)$(TargetName).map;$(TargetPath);$(OutDir)$(TargetName).lst</ExtensionsToDeleteOnClean>
+    <IntermediateOutputPath Condition="'$(IntermediateOutputPath)'==''">$(IntDir)</IntermediateOutputPath>
+    <TrackFileAccess Condition="'$(TrackFileAccess)' == ''">true</TrackFileAccess>
+  </PropertyGroup>
+</Project>
