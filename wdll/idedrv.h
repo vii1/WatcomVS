@@ -83,39 +83,39 @@ extern "C" {
 
 	// PROTOTYPES
 
-	int IdeDrvExecDLL               // EXECUTE THE DLL ONE TIME (LOAD IF REQ'D)
+	int __stdcall IdeDrvExecDLL               // EXECUTE THE DLL ONE TIME (LOAD IF REQ'D)
 	( IDEDRV *inf               // - driver control information
 		, char const *cmd_line )    // - command line
 		;
-	int IdeDrvExecDLLArgv           // EXECUTE THE DLL ONE TIME (LOAD IF REQ'D)
+	int __stdcall IdeDrvExecDLLArgv           // EXECUTE THE DLL ONE TIME (LOAD IF REQ'D)
 	( IDEDRV *inf               // - driver control information
 		, int argc                  // - # of arguments
 		, char **argv )             // - argument vector
 		;
-	void IdeDrvInit                 // INITIALIZE IDEDRV INFORMATION
+	void __stdcall IdeDrvInit                 // INITIALIZE IDEDRV INFORMATION
 	( IDEDRV *inf               // - information
 		, char const *dll_name      // - dll name
 		, char const *ent_name )    // - entry name
 		;
-	int IdeDrvPrintError            // UNLOAD THE DLL
+	int __stdcall IdeDrvPrintError            // UNLOAD THE DLL
 	( IDEDRV *inf )             // - driver control information
 		;
-	int IdeDrvUnloadDLL             // UNLOAD THE DLL
+	int __stdcall IdeDrvUnloadDLL             // UNLOAD THE DLL
 	( IDEDRV *inf )             // - driver control information
 		;
-	int IdeDrvStopRunning           // SIGNAL A BREAK
+	int __stdcall IdeDrvStopRunning           // SIGNAL A BREAK
 	( IDEDRV *inf )             // - driver control information
 		;
 
-	void IdeDrvChainCallbacks       // SET CALLBACKS FOR DLL CALLLING A DLL
+	void __stdcall IdeDrvChainCallbacks       // SET CALLBACKS FOR DLL CALLLING A DLL
 	( void *cb                  // - parent dll callbacks
 		, void *info )              // - parent dll initialization
 		;
 
-	void *IdeDrvGetCallbacks        // GET CALLBACKS (TO FILL IN BLANKS)
+	void* __stdcall IdeDrvGetCallbacks        // GET CALLBACKS (TO FILL IN BLANKS)
 	( void )
 		;
-	void IdeDrvSetCallbacks         // SET CALLBACKS (TO FILL IN BLANKS)
+	void __stdcall IdeDrvSetCallbacks         // SET CALLBACKS (TO FILL IN BLANKS)
 	( void *cb )
 		;
 #ifdef __cplusplus

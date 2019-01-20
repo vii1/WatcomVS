@@ -565,7 +565,7 @@ static void finiConsole( void )
 #define stashCodes( _inf, _run, _ret ) \
     (_inf)->dll_status = (_run); (_inf)->drv_status = (_ret);
 
-int IdeDrvExecDLL               // EXECUTE THE DLL ONE TIME (LOAD IF REQ'D)
+int __stdcall IdeDrvExecDLL               // EXECUTE THE DLL ONE TIME (LOAD IF REQ'D)
 ( IDEDRV *inf               // - driver control information
 	, char const *cmd_line )    // - command line
 #ifdef STATIC_LINKAGE
@@ -721,7 +721,7 @@ int IdeDrvExecDLLArgv           // EXECUTE THE DLL ONE TIME (LOAD IF REQ'D)
 #endif
 
 
-int IdeDrvUnloadDLL             // UNLOAD THE DLL
+int __stdcall IdeDrvUnloadDLL             // UNLOAD THE DLL
 ( IDEDRV *inf )             // - driver control information
 #ifdef STATIC_LINKAGE
 							// Static Linkage: nothing to unload
@@ -756,7 +756,7 @@ int IdeDrvUnloadDLL             // UNLOAD THE DLL
 #endif
 
 
-int IdeDrvStopRunning           // SIGNAL A BREAK
+int __stdcall IdeDrvStopRunning           // SIGNAL A BREAK
 ( IDEDRV *inf )             // - driver control information
 #ifdef STATIC_LINKAGE
 							// Static Linkage: direct call
@@ -793,7 +793,7 @@ static char const *msgs[] =
 };
 
 
-int IdeDrvPrintError            // UNLOAD THE DLL
+int __stdcall IdeDrvPrintError            // UNLOAD THE DLL
 ( IDEDRV *inf )             // - driver control information
 {
 	char const  *msg;
@@ -815,7 +815,7 @@ int IdeDrvPrintError            // UNLOAD THE DLL
 	return( inf->drv_status );
 }
 
-void IdeDrvChainCallbacks       // SET CALLBACKS FOR DLL CALLLING A DLL
+void __stdcall IdeDrvChainCallbacks       // SET CALLBACKS FOR DLL CALLLING A DLL
 ( void *cb                  // - parent dll callbacks
 	, void *info )              // - parent dll initialization
 {
@@ -823,20 +823,20 @@ void IdeDrvChainCallbacks       // SET CALLBACKS FOR DLL CALLLING A DLL
 	InfoPtr = (IDEInitInfo *)info;
 }
 
-void *IdeDrvGetCallbacks                // GET CALLBACKS
+void* __stdcall IdeDrvGetCallbacks                // GET CALLBACKS
 ( void )
 {
 	return( (void *)CBPtr );
 }
 
-void IdeDrvSetCallbacks         // GET CALLBACKS
+void __stdcall IdeDrvSetCallbacks         // GET CALLBACKS
 ( void *cb )
 {
 	CBPtr = (IDECallBacks *)cb;
 }
 
 
-void IdeDrvInit                 // INITIALIZE IDEDRV INFORMATION
+void __stdcall IdeDrvInit                 // INITIALIZE IDEDRV INFORMATION
 ( IDEDRV *inf               // - information
 	, char const *dll_name      // - dll name
 	, char const *ent_name )    // - entry name

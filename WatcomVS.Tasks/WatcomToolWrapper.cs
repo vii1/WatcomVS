@@ -30,15 +30,15 @@ namespace WatcomVS.Tasks
             // $ filled in by IDEDRV (private)
         }
 
-        [DllImport( "wdll.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi )]
+        [DllImport( "wdll.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi )]
         private static extern int IdeDrvExecDLL( ref IDEDRV inf, [MarshalAs( UnmanagedType.LPStr )] string cmd_line );
-        [DllImport( "wdll.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi )]
+        [DllImport( "wdll.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi )]
         private static extern void IdeDrvInit( ref IDEDRV inf, [MarshalAs( UnmanagedType.LPStr )] string dll_name, [MarshalAs( UnmanagedType.LPStr )] string ent_name );
-        [DllImport( "wdll.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi )]
+        [DllImport( "wdll.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi )]
         private static extern int IdeDrvPrintError( ref IDEDRV inf );
-        [DllImport( "wdll.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi )]
+        [DllImport( "wdll.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi )]
         private static extern int IdeDrvUnloadDLL( ref IDEDRV inf );
-        [DllImport( "wdll.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi )]
+        [DllImport( "wdll.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi )]
         private static extern int IdeDrvStopRunning( ref IDEDRV inf );
 
         #endregion

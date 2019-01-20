@@ -72,13 +72,13 @@
     <Compile Include="WatcomToolWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Debug\wdll.dll">
+    <Content Include="..\$(Configuration)\wdll.dll">
       <Link>wdll.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Debug\wdll.pdb">
+    <Content Include="..\$(Configuration)\wdll.pdb">
       <Link>wdll.pdb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
