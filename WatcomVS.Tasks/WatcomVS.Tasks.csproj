@@ -67,9 +67,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DisposeUnmanaged.cs" />
-    <Compile Include="WatcomToolWrapper.cs" />
     <Compile Include="WatcomToolTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WatcomToolWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Debug\wdll.dll">
+      <Link>wdll.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Debug\wdll.pdb">
+      <Link>wdll.pdb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>

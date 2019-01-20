@@ -1,0 +1,11 @@
+LIBRARY wdll
+EXPORTS
+IdeDrvExecDLL               
+;IdeDrvExecDLLArgv           
+IdeDrvInit                 
+IdeDrvPrintError            
+IdeDrvUnloadDLL             
+IdeDrvStopRunning           
+IdeDrvChainCallbacks       
+IdeDrvGetCallbacks        
+IdeDrvSetCallbacks         
