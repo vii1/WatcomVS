@@ -72,11 +72,11 @@
     <Compile Include="WatcomToolWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\$(Configuration)\wdll.dll">
+    <Content Include="..\Debug\wdll.dll">
       <Link>wdll.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\$(Configuration)\wdll.pdb">
+    <Content Include="..\Debug\wdll.pdb">
       <Link>wdll.pdb</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

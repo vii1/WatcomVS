@@ -10,7 +10,7 @@ namespace WatcomVS.Tests
         [TestMethod]
         public void TestSimpleToolDLL()
         {
-            var dll = new WatcomToolWrapper("wcc", @"c:\watcom\binnt\wcc.exe", @"c:\watcom\binnt\wccd.dll" );
+            var dll = new WatcomToolWrapper("wcc", @"c:\watcom\binnt\wcc.exe" );
             dll.Run( "nul" );
         }
     }
